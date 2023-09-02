@@ -28,17 +28,20 @@ C ------>http POST /api/goals + payloads-------->
 <-------------201+location---------------------
    everything went ok and something was created.
 
+
 R ------------>http GET /api/goals-------------->
                   read goals
 
 <----------------200+payloads------------------
             everything is ok and data
 
+
 U ------>http PUT /api/goals/1 + payloads-------->
 update goals, include id to tell which goals you want to update
 
 <--------------------200------------------------
                  everything is ok
+
 
 D ----------->http DELETE /api/goals/1----------->
             Delete goals with id of goals
