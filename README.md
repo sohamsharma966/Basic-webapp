@@ -22,6 +22,7 @@
 - that is done using bunch of HTTP request and the operation we gonna do with HTTP is CRUD= create, read, update and delete.
 
 
+```javascript
 C ------>http POST /api/goals + payloads-------->
          create goals (goal is resource)
 || <-------------201+location---------------------
@@ -41,6 +42,7 @@ D ----------->http DELETE /api/goals/1----------->
             Delete goals with id of goals
 || <--------------------200------------------------
                  everything is ok
+```
 
 
 **Our Goal is to create this same API shown above for our Goals**
