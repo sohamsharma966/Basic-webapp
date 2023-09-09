@@ -6,8 +6,8 @@ const connectDB=require("./config/db")
 const {errorHandler}=require("./Middleware/errorMidleware")
 const port= process.env.PORT || 5000 //port server to run on.
 //2. in creating route.
-const mainrouter=require("./Routes/goalroutes")
-
+const goalrouter=require("./Routes/goalroutes")
+const userrouter=require("./Routes/userroutes")
 
 connectDB()
 
@@ -22,8 +22,8 @@ app.use(express.urlencoded({extended:false})) // for url encoding
 
 // 1. creating Route. (basic way)
 // You can define various routes using methods like get(), post().
-// app.get() we are listening for request of get method with route of /api/goals.
-// app.get("/api/goals",function(req,res){
+
+// app.get("/api/goals",function(req,res){        // app.get() we are listening for request of get method with route of /api/goals.
 //     //res.send("Get goals") //not preferred
 //     //OR
 //     res.json({message: "Get goals"}) // Usualy response we send is in JSON, status we get 200.
@@ -32,7 +32,8 @@ app.use(express.urlencoded({extended:false})) // for url encoding
 // })
 
 // 2. creating route. (proper way)
-app.use("/api/goals",mainrouter) //request will hit here and goes look into goalroutes.js.
+app.use("/api/goals",goalrouter) //request will hit here and goes look into goalroutes.js.
+app.use("/api/users",userrouter) //request will hit here and goes look into goalroutes.js.
 
 app.use(errorHandler)
  

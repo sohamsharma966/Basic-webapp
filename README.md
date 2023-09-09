@@ -1,21 +1,23 @@
 # **MERN Stack - Support ticket application.**
 
-## Video 1 
+## TASK 1 
 - Built rest api with express (which is backend nodejs framework).
 - MognoDB for database and mongoose for connect and interaction with mongodb.
-## Video 2
-- Adding Authentication in api then we can create login endpoint and register endpoint.
+## TASK 2
+- Adding Authentication in REST api using JSON web token then we can create login endpoint and register endpoint.
 - Then we will able to get json web token once we authenticate.
 - With that token we can able to access protected routes.
-## Video 3; we will start on front-end.
+## TASK 3; we will start on front-end.
 - Start on front-end we have user form, login form and dashboard {where we have goals}.
 - REST api gonna Create, Read, Update and Delete.  
 - We gonna use redux on front-end.
 //the main resource in this gonna be goals and theres were rest api gonna be we gonna create, read, update and delete goals.
 
+
+## TASK 1 
 ## 1. What is REST api and how it works?
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 1. Restclient(react app)  -------- Restserver(express frame,*apis*).
 - we need these two to communicate - and we do that with REST api.
@@ -181,6 +183,62 @@ app.use(express.urlencoded({extended:true})) // for url encoded // and parse obj
 4. we have created db.js (file to connect with database) and goalmodel.js (file to create schema like what type of field will present in data.)
 
 5. use goalmodel module in goalcontroller.js.
+
+
+
+## TASK 2
+*Old Task= we created REST api which is CRED api, we can create, read, update and delete goals*
+*In this Task= we gonna add authentication so just not anybody can create, read, update, and delete goals*
+## 4. What is JSON Web Token (JWT)?
+
+Token has 3 Parts.
+1 Part is Header= which include Algorithum and Token type.
+```json
+{
+   "alg": "HS256",
+   "typ": "JWT"
+}
+```
+2 Part is Data= which include data that is our user ID.
+```json
+{
+   "sub": "123456789",
+   "name": "soham sharma",
+   "int": 123456123 //it also has time_stamp the token was issue at.
+}
+```
+3 Part is Signature= which will ensure that JWT hasn't been altered in any way.
+
+*the private key known only to the issuer*
+*party that creates the token, assigns the header and paylod with secret that know to the issuer and reciver*
+
+### how to protect route that we gonna access?
+login > get the token > send token in the headers to access that protected route.
+
+## 5. Add User to goal model.
+
+1. Create usermodel.js in models_folder > uase mongoose to create schema.
+
+2. Use usermodel.js refrence in goalmodels.js.
+
+## 6. User route and conroller function.
+
+1. Add API of user in server.js [app.use] > create userroute.js to manage that request [app.get, app.post, app.put, app.delete] > attach that api to userroute.js.
+
+2. Make usercontrol.js for userroute.js (usercontroller.js will take action on userroute.js method of request is made)
+
+3. Install "npm i bcryptjs" for pass encryptionand and "npm i jsonwebtoken" because we will dealing with json web token. > add those both [bcrypt and jsonwebtoken] modules to usercontroller.js. and add user from = usermodel.js to userconroller.js.
+
+4. In usercontroller.js created function for action [register, login and getting data of user] and in them added hash password with salt, authentication and JSON webtokens respectively.
+
+5. Created authmiddleware.js and use module in userroutes.js and goalroutes.js.
+
+
+
+
+
+
+
 
 
 
