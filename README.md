@@ -14,7 +14,7 @@
 //the main resource in this gonna be goals and theres were rest api gonna be we gonna create, read, update and delete goals.
 
 
-## TASK 1 
+# TASK 1
 ## 1. What is REST api and how it works?
 
 ![Alt text](images/image.png)
@@ -186,7 +186,7 @@ app.use(express.urlencoded({extended:true})) // for url encoded // and parse obj
 
 
 
-## TASK 2
+# TASK 2
 *Old Task= we created REST api which is CRED api, we can create, read, update and delete goals*
 *In this Task= we gonna add authentication so just not anybody can create, read, update, and delete goals*
 ## 4. What is JSON Web Token (JWT)?
