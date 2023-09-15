@@ -189,6 +189,7 @@ app.use(express.urlencoded({extended:true})) // for url encoded // and parse obj
 # TASK 2
 *Old Task= we created REST api which is CRED api, we can create, read, update and delete goals*
 *In this Task= we gonna add authentication so just not anybody can create, read, update, and delete goals*
+
 ## 4. What is JSON Web Token (JWT)?
 
 Token has 3 Parts.
@@ -235,28 +236,267 @@ login > get the token > send token in the headers to access that protected route
 
 
 
+# TASK 3
+*we gonna use redux along with redux toolkit*
+
+## 7. Generate our REACT application.
+
+**React is a JavaScript library for building user interfaces.**
+
+**Note= Every work gonna be done in frontend folder**
+
+1. First install the package "npm install create-react-app" (by running this command i make available create-react-app to this system by which i can create react projects)
+
+2. Generate our react application > in Frontend_folder "npx create-react-app frontend --template redux" or "npx create-react-app@latest frontend --template redux" (npx to run executables from packages) > the frontend_folder will get created.
+
+*"--template redux"= it will install redux toolkit and react redux package*
+
+3. Let run react-dev server but it is in frontend folder, for simplicity let us add script in backend json > go to package.json of backend > add in script "Client": "npm start --prefix frontend".
+
+4. Run on frontend > "npm run client", right now we just don't need backend to run, in future i'll show you to run both backend and frontend with one script.
+
+5. Created 3 pages > in pages_folder in frontend > as dashboard.jsx, login.jsx and register.jsx.
+
+6. Now want route to thiese 3 pages for that install package > go to frontend folder first "cd frontend" then > run "npm i react-router-dom".
+
+7. Add that three pages in app.js by importing module.
+
+8. Creates header.jsx in feature_folder so that we can create some navigations in header.
+
+9. Run on frontend > "npm i react-icons" to use some icons in header.jsx/features.
+
+10. create good register form & login form in regiter.jsx & login.jsx situated in pages_folder in frontend.
+
+11. Now to run Backend and Frontend at same time than run > "npm i -D concurrent" > go to root package.json add into script "dev": "concurrently \"npm run server\" \"npm run client\"" > now you can run both backend and frontend by "npm run dev".
+
+12. **after run "npm run dev" > our both Backend and Frontend running check in terminal > server start on port 5000 & frontend start on port 3000**
+
+13. In frontend create auth_folder in features & create authSlice.js and authService.js in it.
+
+14. Now create registration with athunk function in authslice.jsx.
+*athunk function = this function will deal with async data and backend*
+
+15. install "npm i axios react-toastify", toastify will show alerts. > go to authservice.js and create http requests with axios from which you will send register request to backend from frontend and connect them.
+
+16. add proxy in frontend package.json to connect backend and frontend > below "version" add > "proxy": "http://localhost:5000"
+
+17. connnect register & reset function of authSlice.jsx with register.jsx.
+
+18. load your application and input values in register it will save to database.
 
 
 
 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+# Things i want to remember.[IGNORE]
+
+**javascript vs es6**
+t's important to clarify that ES6 (ECMAScript 2015) is not a different language from JavaScript. Instead, ES6 is a significant update to the JavaScript language specification, introducing new features, syntax enhancements, and improvements to the language. ES6 is sometimes referred to as ECMAScript 2015 or ECMAScript 6, but it's commonly called ES6 for brevity.
+
+**Javascript** = it didn't have block-scoped variables (let and const), arrow functions, classes, and destructuring.
+**ECMAscript 6/2015** = Some of the key features introduced in ES6 include:
+   - Block-scoped variables: `let` and `const` for declaring variables with block scope.
+     Example:-
+      ```javascript
+      function exampleFunction() {
+         if (true) {
+            let blockScopedVar = "I am block-scoped!";
+            const constantVar = "I won't change!";
+         }
+         // `blockScopedVar` and `constantVar` are not accessible here
+      } 
+      ``` 
+   - Arrow functions: A more concise syntax for defining functions.
+   - Classes: A more structured and object-oriented way to create constructor functions.
+   - Destructuring: A way to extract values from objects and arrays more easily.
+   - Template literals: A way to create string literals with embedded expressions.
+   - Default function parameters and rest parameters.
+   - Modules: A standardized way to organize and import/export code.
+   - Promises: A mechanism for handling asynchronous operations more cleanly.
+   - ...and more.
 
 
+---------------------------------------------------------------------------------------------------------------
+
+**javascript famous libraries and framework**
+
+1. **Front-End Web Development:**
+   - **React.js:** A library for building user interfaces, developed by Facebook. It is often considered a framework by virtue of its ecosystem and capabilities.
+   - **Angular:** A full-featured framework for building web applications, developed by Google.
+   - **Vue.js:** A progressive framework for building user interfaces.
+   - **jQuery:** A library for simplifying HTML document traversal and manipulation, as well as event handling.
+   - **D3.js:** A library for data visualization using HTML, SVG, and CSS.
+
+2. **Back-End Development:**
+   - **Node.js:** While not a traditional framework, Node.js is a runtime environment that allows you to build server-side applications with JavaScript. You can use frameworks for web server development like:-
+      - Express.js.
+      - Nest.js.
+      - Hapi.js.
+
+3. **Server-Side Development:**
+   - **Express.js:** A minimal and flexible Node.js web server development framework.
+   - **Koa.js:** A modern and lightweight Node.js web framework.
+
+4. **Full-Stack Development:**
+   - **Meteor:** A full-stack platform for building web and mobile applications using a single codebase.
+
+5. **Real-Time Web Applications:**
+   - **Socket.IO:** A library and framework for building real-time web applications with features like WebSocket support.
+
+6. **State Management:**
+   - **Redux:** A predictable state container for managing the state of JavaScript applications.
+   - **Mobx:** A simple and scalable state management library.
+   - **Vuex:** The state management library for Vue.js applications.
 
 
+7. **HTTP Requests:**
+   - **Axios:** A popular library for making HTTP requests from the browser or Node.js.
+
+8. **Utility Libraries:**
+   - **Lodash:** A utility library that provides many helpful functions for common programming tasks.
+   - **Underscore.js:** A similar utility library with functional programming features.
+
+9. **Testing:**
+   - **Jest:** A JavaScript testing framework often used with React applications.
+   - **Mocha:** A flexible testing framework that works well for both browser and Node.js environments.
+
+10. **Routing:**
+   - **React Router:** A popular library for handling client-side routing in React applications.
+   - **Vue Router:** The official router for Vue.js applications.
+   - **React Navigation:** A routing and navigation library for React Native applications.
+
+11. **Date and Time:**
+   - **Moment.js:** A library for parsing, validating, manipulating, and formatting dates and times.
+   - **date-fns:** A modern JavaScript date utility library.
+
+12. **Animation:**
+   - **GreenSock Animation Platform (GSAP):** A robust animation library for creating high-performance animations in web applications.
+
+13. **UI Component Libraries:**
+   - **Material-UI:** A popular UI framework for React applications following the Material Design guidelines.
+   - **Ant Design:** A comprehensive UI library for building enterprise-level web applications.
+   - **Vuetify:** A Material Design component framework for Vue.js.
+
+14. **Mobile Development:**
+   - **React Native:** A framework for building mobile applications using React.
+   - **Ionic:** A framework for building mobile and progressive web apps using web technologies.
+
+15. **Data Visualization:**
+   - **Chart.js:** A simple and flexible JavaScript charting library.
+   - **Plotly:** A graphing library that makes interactive, publication-quality graphs online.
+
+16.  **Machine Learning and Data Science:**
+   - **TensorFlow.js:** A library for machine learning and deep learning in JavaScript, which can run in both the browser and Node.js.
+
+17. **Serverless Computing:**
+   - **AWS Amplify:** A framework for building serverless applications using JavaScript and AWS services.
+   - **Serverless Framework:** While not JavaScript-specific, it allows you to develop, deploy, and manage serverless applications with support for JavaScript-based functions.
 
 
-
-
-
-
-
-
-
-
-
-
-
-# Things i want to remember.(IGNORE)
+---------------------------------------------------------------------------------------------------------------
 
 1. function inside parameter.
 
