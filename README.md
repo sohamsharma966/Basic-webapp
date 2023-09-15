@@ -1,5 +1,5 @@
 # Basic Webapp on MERN stack
-**Follow steps to understancd MERN stack**
+**Follow steps to understancd MERN stack and create fullstack webapp**
 
 MERN= Mongodb, Express, React, Nodejs
 
