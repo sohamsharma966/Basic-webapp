@@ -1,4 +1,6 @@
-# **MERN Stack - Support ticket application.**
+# Basic Webapp on MERN stack
+**Follow steps to understancd MERN stack**
+MERN= Mongodb, Express, React, Nodejs
 
 ## TASK 1 
 - Built rest api with express (which is backend nodejs framework).
