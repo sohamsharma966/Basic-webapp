@@ -1,3 +1,4 @@
+const path =require("path") // for deploy
 const express=require("express"); //bringing module, express which is backend web framework
 const dotenv=require("dotenv").config() //bringing module dotenv and calling with function config()= that will allow us to have .env file with variables in it.
 //now create .env file
@@ -34,6 +35,15 @@ app.use(express.urlencoded({extended:false})) // for url encoding
 // 2. creating route. (proper way)
 app.use("/api/goals",goalrouter) //request will hit here and goes look into goalroutes.js.
 app.use("/api/users",userrouter) //request will hit here and goes look into goalroutes.js.
+
+// serve frontend // for deploy
+if (process.env.NODE_ENV===production){  //setting up condistion if its in production
+    app.use(express.static(path.join(__dirname, "../frontend/build"))) // so we need to set our static folder which is build folder
+
+    app.get("*",(req,res)=>res.sendFile(path.resolve(__dirname,"../","frontend","build","index.html")))
+}else{
+    app.get("/",(req,res)=>res.send("please set to production"))
+}
 
 app.use(errorHandler)
  

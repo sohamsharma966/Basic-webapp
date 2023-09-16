@@ -288,6 +288,18 @@ login > get the token > send token in the headers to access that protected route
 18. load your application and input values in register it will save to database.
 
 
+## Deploy
+
+1. with "npm run dev" > we running backend dev "npm run server" & frontend dev "react-scripts start" that we get with react app.
+
+2. well frontend dev server is not in production and backend has production.
+
+3. when we do "npm run build" in frontend it will create Build folder > which have static pages including index.html pages so we have to add this to server.js file.
+
+4. add code to server.js of frontend build folder.
+
+
+
 -
 -
 -
