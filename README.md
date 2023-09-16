@@ -288,111 +288,101 @@ login > get the token > send token in the headers to access that protected route
 18. load your application and input values in register it will save to database.
 
 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
+# Github Actions 
+
+## 1. What is Github actions?
+## 2. How to use Github actions - step by step DEMO.
+## 3. Github action terms: Events, Workflows, Jobs, Steps.
+
+1. **Github actions**= built-in feature in Github to create custom automated workflows like CI/CD|DevOps.
+   what is workflows?
+   - like in jenkins (it is CI tool) = in which we create automated jobs. build job, testing job, release job, we share link of github when ever we update repo this job will run. but in github actions we can do this thing within githubs.
+      - Implement CI/CD | Devops workflows.
+      - we can also create to automate other workflows like SDLC = by this we can perform any action or events automatically on commit.
+      - we can run the task on specific events.
+
+```markdown
+                               stages in software development
+         code         >       Build       >       Deploy      >       Testing        >        Release
+   developement team   "npm run build" than
+put code on github     it creates a build
+                       folder (static files)
+                       than u gonna run static
+                       application from there.
+ ```
+
+2. **DEMO** 
+Step 1 - Sign up or login to Github.com.
+Step 2 - Create a new repo or use in existing repo.
+Step 3 - In the repo > create folder .github/workflows by going to repo and actions tab > select create       
+         yourself and .github/workflows/main.yml create automatically.
+Step 4 - Yaml file with .yml extension are those in which we create these workflows.
+Step 5 - Add the workflow content in the main.yml file.
+```json
+// Example of simple workflow.
+name: hello-world // name of workflow
+on: push // Event = when push occcur than run jobs
+jobs:
+  my-job:  // one job under jobs
+    runs-on: ubuntu-latest // job = run commands on this machine, so job setting up this machine.
+    steps: // step = perform actual command
+      - name: my-step  
+        run: echo "Hello World!" // in step command is running.
+```
+Step 6 - Commit and push the changes.
+Step 7 - Check Actions and you will see jobs that run, you can click on it to know more.
+
+3. **Terms**=
+   WORKFLOW- collection of jobs, defined in yaml files [name:]
+   EVENTS- any activity in the workflow that triggers the workflow [on:]
+   JOBS- collection of steps. [jobs:] we can create many sub jobs under this by [my-jobs:]
+   STEPS- actual action to be taken = commands, scripts. [steps:]
+
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 # Things i want to remember.[IGNORE]
 
