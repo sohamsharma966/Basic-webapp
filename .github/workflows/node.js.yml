@@ -28,4 +28,4 @@ jobs:
     - run: npm i
     - run: npm run build --if-present
     - run: cd ..
-    - run: npm start
+    - run: npm run start
