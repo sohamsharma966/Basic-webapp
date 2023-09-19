@@ -288,7 +288,10 @@ login > get the token > send token in the headers to access that protected route
 18. load your application and input values in register it will save to database.
 
 
-## Deploy
+## Automatic Build & Test & Deploy using Github actions.
+**Github pages only runs static webpages not dynamic webpages**
+
+STATIC PART = Frontend
 
 1. with "npm run dev" > we running backend dev "npm run server" & frontend dev "react-scripts start" that we get with react app.
 
@@ -298,6 +301,20 @@ login > get the token > send token in the headers to access that protected route
 
 4. add code to server.js of frontend build folder.
 
+5. install "npm install --save gh-pages" in root package.json, which enables github pages on app.
+
+6. add in root package.json.
+"homepage": "https://myusername.github.io/my-app" after main section.
+"predeploy": "npm run build" in script section.
+"deploy": "gh-pages -d build" in script section.
+
+7. go to github/setting/tokens > generate token to deploy application through workflow. > add that token to project/settings/secret with name of var ACTIONS_DEPLOY_ACCESS_TOKEN.
+
+DYNAMIC PART = Backend
+
+1. create account on render.
+
+2. Use web services > 
 
 
 -
