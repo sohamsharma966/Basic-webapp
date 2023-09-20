@@ -37,7 +37,7 @@ app.use("/api/goals",goalrouter) //request will hit here and goes look into goal
 app.use("/api/users",userrouter) //request will hit here and goes look into goalroutes.js.
 
 // serve frontend // for deploy
-if (process.env.NODE_ENV===production){  //setting up condistion if its in production
+if (process.env.NODE_ENV==="production"){  //setting up condistion if its in production
     app.use(express.static(path.join(__dirname, "../frontend/build"))) // so we need to set our static folder which is build folder
 
     app.get("*",(req,res)=>res.sendFile(path.resolve(__dirname,"../","frontend","build","index.html")))
