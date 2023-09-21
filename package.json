@@ -5,8 +5,8 @@
   "description": "Goal setter app for tutorials",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "start": "node Backend/server.js",
+    "server": "nodemon Backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "predeploy": "cd frontend && npm run build",
