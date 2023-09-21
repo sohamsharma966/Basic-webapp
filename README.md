@@ -365,24 +365,26 @@ Step 7 - Check Actions and you will see jobs that run, you can click on it to kn
    STEPS- actual action to be taken = commands, scripts. [steps:]
 
 
-## 2. Manual Build & Test & Deploy on RENDER.
+## 2. Automatically [Build & Test & Deploy] om RENDER.
 
 1. Go to webserver service in Render.
 
 2. Connect to github and Get repo project from your github account.
 
-2. Pre-deploy commands.
+3. Pre-deploy commands.
 -> Run "npm install --prefix frontend" which install dependencies in frontend folder and 
 -> Run "npm run build --prefix frontend" which will create build folder in frontend folder.
 -> Run "npm install" which install dependencies for backend folder.
 
-2. deploy commands.
+4. deploy commands.
 -> Run "npm run start" which is "node backend/server.js" which will start webserver.
 
-5. After deploy It will create link and go to link of render like https://your_project.onrender.com/
+5. After deploy It will create link and go to link of render like https://your_project.onrender.com/.
+
+6. When you commit it will deploy automatically again with new changes.
 
 
-## 3. Automatic Build & Test & Deploy using Github actions.
+## 3. Automatic [Build & Test & Deploy] using Github actions.
 **Github pages only runs static webpages not dynamic webpages**
 
 STATIC PART = Frontend on Github-pages
