@@ -2,6 +2,9 @@
 **Follow steps to understand MERN stack and create fullstack webapp**
 
 MERN= Mongodb, Express, React, Nodejs
+Website = https://basic-webapp-mern.onrender.com/
+
+![Alt text](images/image1.png)
 
 ## TASK 1 
 - Built rest api with express (which is backend nodejs framework).
@@ -288,35 +291,6 @@ login > get the token > send token in the headers to access that protected route
 18. load your application and input values in register it will save to database.
 
 
-## Automatic Build & Test & Deploy using Github actions.
-**Github pages only runs static webpages not dynamic webpages**
-
-STATIC PART = Frontend
-
-1. with "npm run dev" > we running backend dev "npm run server" & frontend dev "react-scripts start" that we get with react app.
-
-2. well frontend dev server is not in production and backend has production.
-
-3. when we do "npm run build" in frontend it will create Build folder > which have static pages including index.html pages so we have to add this to server.js file.
-
-4. add code to server.js of frontend build folder.
-
-5. install "npm install --save gh-pages" in root package.json, which enables github pages on app.
-
-6. add in root package.json.
-"homepage": "https://myusername.github.io/my-app" after main section.
-"predeploy": "npm run build" in script section.
-"deploy": "gh-pages -d build" in script section.
-
-7. go to github/setting/tokens > generate token to deploy application through workflow. > add that token to project/settings/secret with name of var ACTIONS_DEPLOY_ACCESS_TOKEN.
-
-DYNAMIC PART = Backend
-
-1. create account on render.
-
-2. Use web services > 
-
-
 -
 -
 -
@@ -340,7 +314,7 @@ DYNAMIC PART = Backend
 -
 
 
-# Github Actions 
+## 1. Github Actions 
 
 ## 1. What is Github actions?
 ## 2. How to use Github actions - step by step DEMO.
@@ -391,6 +365,50 @@ Step 7 - Check Actions and you will see jobs that run, you can click on it to kn
    STEPS- actual action to be taken = commands, scripts. [steps:]
 
 
+## 2. Manual Build & Test & Deploy on RENDER.
+
+1. Go to webserver service in Render.
+
+2. Connect to github and Get repo project from your github account.
+
+2. Pre-deploy commands.
+-> Run "npm install --prefix frontend" which install dependencies in frontend folder and 
+-> Run "npm run build --prefix frontend" which will create build folder in frontend folder.
+-> Run "npm install" which install dependencies for backend folder.
+
+2. deploy commands.
+-> Run "npm run start" which is "node backend/server.js" which will start webserver.
+
+5. After deploy It will create link and go to link of render like https://your_project.onrender.com/
+
+
+## 3. Automatic Build & Test & Deploy using Github actions.
+**Github pages only runs static webpages not dynamic webpages**
+
+STATIC PART = Frontend on Github-pages
+
+1. with "npm run dev" > we running backend dev "npm run server" & frontend dev "react-scripts start" that we get with react app.
+
+2. well frontend dev server is not in production and backend has production.
+
+3. when we do "npm run build" in frontend it will create Build folder > which have static pages including index.html pages so we have to add this to server.js file.
+
+4. add code to server.js of frontend build folder.
+
+5. install "npm install --save gh-pages" in root package.json, which enables github pages on app.
+
+6. add in root package.json.
+"homepage": "https://myusername.github.io/my-app" after main section.
+"predeploy": "npm run build" in script section.
+"deploy": "gh-pages -d build" in script section.
+
+7. go to github/setting/tokens > generate token to deploy application through workflow. > add that token to project/settings/secret with name of var ACTIONS_DEPLOY_ACCESS_TOKEN.
+
+DYNAMIC PART = Backend on RENDER
+
+1. create account on render.
+
+2. Use web services > 
 -
 -
 -
