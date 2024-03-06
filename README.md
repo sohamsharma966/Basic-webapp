@@ -1,7 +1,7 @@
 # Basic Webapp on MERN stack
 **Follow steps to understand MERN stack and create fullstack webapp**
 
-MERN= Mongodb, Express, React, Nodejs..
+MERN= Mongodb, Express, React, Nodejs
 Website = https://basic-webapp-mern.onrender.com/
 
 ![Alt text](images/image1.png)
