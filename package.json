@@ -18,7 +18,7 @@
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "create-react-app": "^5.0.1",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "gh-pages": "^6.0.0",
